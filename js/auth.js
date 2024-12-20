@@ -1,7 +1,7 @@
 // Kiểm tra token
 function checkAuth() {
     // Lấy token từ localStorage (hoặc sessionStorage tùy dự án)
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('authToken');
 
     // Nếu không có token, điều hướng về trang login
     if (!token) {

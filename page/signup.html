@@ -12,7 +12,7 @@
 
 <div class="container">
   <h2>Đăng ký</h2>
-  <form action="/action_page.php" method="post" enctype="multipart/form-data">
+  <form action="" method="post" enctype="multipart/form-data" id="register-form">
     <!-- Username -->
     <div class="mb-3">
       <label for="username" class="form-label">Tên hiển thị:</label>
@@ -55,3 +55,13 @@
 
 </body>
 </html>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Import file register.js -->
+<script src="/js/signup.js"></script>
+<!-- Gọi hàm đăng ký -->
+<script>
+  // Gọi hàm registerUser với form cần xử lý
+  registerUser('#register-form');
+</script>
