@@ -1,0 +1,80 @@
+/* Đặt padding cho body */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style cho container của form */
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tiêu đề form */
+  .container h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  /* Các ô nhập liệu */
+  input.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* Placeholder */
+  input::placeholder {
+    color: #6c757d;
+  }
+  
+  /* Nút bấm */
+  button.btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Checkbox */
+  .form-check-label {
+    font-size: 14px;
+    color: #495057;
+  }
+  
+  /* Liên kết đăng ký */
+  .mt-3 span {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .mt-3 a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .mt-3 a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
