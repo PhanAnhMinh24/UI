@@ -1,0 +1,105 @@
+/* homepage.css */
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+/* Sidebar */
+.sidebar {
+    border-right: 1px solid #ddd;
+    padding-right: 10px;
+}
+
+.list-group-item {
+    border: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+.category-item a {
+    font-weight: 500;
+}
+
+.hot-label {
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #ff4500;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Carousel */
+.carousel {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Product Grid */
+.product-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        margin-bottom: 20px;
+        border-right: none;
+    }
+
+    .carousel-inner img {
+        height: 200px;
+    }
+
+    .row-cols-md-3 {
+        row-cols: 1;
+    }
+}

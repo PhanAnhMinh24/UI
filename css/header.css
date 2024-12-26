@@ -1,0 +1,164 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.header {
+    background-color: #3498db;
+    padding: 10px 0;
+    color: white;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.nav-menu {
+    background-color: #2980b9;
+}
+
+.nav-menu .nav-link {
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.nav-menu .nav-link:hover {
+    background-color: #3498db;
+}
+
+.sidebar {
+    background-color: #f8f9fa;
+}
+
+.category-item {
+    transition: all 0.3s ease;
+}
+
+.category-item:hover {
+    background-color: #e9ecef;
+}
+
+.hot-label {
+    background-color: #ff4757;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.footer {
+    background-color: #3498db;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer h5 {
+    color: #ffd700;
+}
+
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-container {
+    position: relative;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff4757;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    width: 200px;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+}
+
+.contact-info {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffd700;
+    margin-right: 20px;
+}
+
+.sub-text {
+    font-size: 0.8em;
+    color: white;
+    font-weight: normal;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-actions a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.user-actions a:hover {
+    color: #ffd700;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff4757;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.icon-container {
+    position: relative;
+    display: inline-block;
+}
