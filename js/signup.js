@@ -39,7 +39,7 @@ async function registerUser(formSelector) {
   
           // Gửi dữ liệu qua API
           $.ajax({
-            url: 'http://localhost:8083/auth/signup',
+            url: API_SIGNUP,
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(requestData),
