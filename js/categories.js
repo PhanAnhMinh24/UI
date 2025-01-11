@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Lấy danh sách danh mục từ API
-    fetch('http://localhost:8083/categories', {
+    fetch(API_CATEGORIES, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,  // Đính kèm token vào header
