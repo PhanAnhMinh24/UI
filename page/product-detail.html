@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <title>Chi tiết sản phẩm</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/homepage.css">
+</head>
+
+<body>
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Load Header
+            fetch('../page/component/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+
+            // Load Footer
+            fetch('/page/component/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+    <script src="/js/constants.js"></script>
+    <script src="/js/products.js"></script>
+    <script src="/js/reviews.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Content -->
+    <div class="container mt-4">
+        <h1 class="mb-4" id="product-name">Chi tiết sản phẩm</h1>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                loadProductDetails();
+                loadProductRating();
+                addComment();
+
+                document.querySelector('.container').addEventListener('click', function (event) {
+                    if (event.target && event.target.classList.contains('add-to-cart')) {
+                        const productId = event.target.getAttribute('data-id');
+                        addToCart(productId);
+                    }
+                });
+            });
+        </script>
+        <div class="row" id="content-product-detail">
+        </div>
+
+        <!-- Product Rating and Comments -->
+        <div class="mt-5">
+            <h2 class="mb-3">Đánh giá và bình luận</h2>
+
+            <!-- Display average rating -->
+            <div id="product-rating" class="mb-4">
+                <h4>Đánh giá trung bình: <span id="average-rating"></span> / 5</h4>
+                <div id="star-rating">
+                    <!-- Stars will be rendered dynamically here -->
+                </div>
+            </div>
+
+            <!-- Comment Form -->
+            <form id="comment-form" class="mb-4">
+                <div class="mb-3">
+                    <label for="rating" class="form-label">Đánh giá của bạn:</label>
+                    <select id="rating" class="form-select" required>
+                        <option value="5">5 sao</option>
+                        <option value="4">4 sao</option>
+                        <option value="3">3 sao</option>
+                        <option value="2">2 sao</option>
+                        <option value="1">1 sao</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Bình luận của bạn:</label>
+                    <textarea id="comment" class="form-control" rows="3" placeholder="Nhập bình luận của bạn"
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Gửi</button>
+            </form>
+
+            <!-- Comments Section -->
+            <div id="comments-section">
+                <h4>Bình luận:</h4>
+                <ul id="comments-list" class="list-group">
+                    <!-- Comments will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- Footer Placeholder -->
+    <div id="footer"></div>
+</body>
+
+</html>

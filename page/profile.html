@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Cá Nhân</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Đặt nền và căn chỉnh */
+        body {
+            background-color: #f8f9fa;
+            /* Nền nhẹ nhàng */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #007bff;
+            /* Header xanh lam */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            flex: 1;
+            /* Giãn chiếm khoảng trống giữa header và footer */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 600px;
+            /* Chiều rộng tối đa của form */
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            /* Bo góc mềm mại */
+            background-color: #ffffff;
+        }
+
+        footer {
+            background-color: #007bff;
+            /* Footer xanh lam */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #ffc107;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            font-size: 16px;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header được nhúng vào đây -->
+    <div id="header"></div>
+
+    <main>
+        <div class="card">
+            <div class="card-body">
+                <form id="profile-form">
+                    <!-- Ảnh đại diện -->
+                    <div class="mb-3 text-center">
+                        <label for="profileImage" class="form-label">Ảnh Đại Diện</label>
+                        <div>
+                            <img id="profileImagePreview" src="/path/to/default-image.jpg" alt="Ảnh đại diện"
+                                class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                        </div>
+                        <input type="file" class="form-control" id="profileImage" accept="image/*">
+                    </div>
+                    <!-- Họ và Tên -->
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Họ và Tên</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Nguyễn Văn A">
+                    </div>
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                    </div>
+                    <!-- Số điện thoại -->
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Số Điện Thoại</label>
+                        <input type="text" class="form-control" id="phone" placeholder="0912345678">
+                    </div>
+                    <!-- Chọn địa chỉ -->
+                    <div class="mb-3">
+                        <label for="addressSelector" class="form-label">Địa Chỉ</label>
+                        <select class="form-control" id="addressSelector">
+                        </select>
+                    </div>
+                    <!-- Đăng ký bán hàng -->
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="isSeller">
+                            <label class="form-check-label" for="isSeller">
+                                Tôi muốn trở thành người bán hàng.
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Nút cập nhật -->
+                    <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- Footer được nhúng vào đây -->
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Load Header
+            fetch('../page/component/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+
+            // Load Footer
+            fetch('../page/component/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+    <script src="/js/constants.js"></script>
+    <script src="/js/profile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phương Thức Thanh Toán</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+         body {
+            background-color: #f8f9fa;
+            /* Nền nhẹ nhàng */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        main {
+            flex: 1;
+            /* Giãn chiếm khoảng trống giữa header và footer */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Load Header
+            fetch('../page/component/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+
+            // Load Sidebar
+            fetch('../page/component/sidebar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('sidebar').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading sidebar:', error));
+
+            // Load Footer
+            fetch('../page/component/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
+
+    <main>
+        <div class="container mt-5">
+            <h2 class="text-center">Thông Tin Thanh Toán</h2>
+
+            <form id="payment-form">
+                <!-- Thông tin người nhận -->
+                <div class="mb-3">
+                    <label for="receiver-name" class="form-label">Tên Người Nhận</label>
+                    <input type="text" id="receiver-name" class="form-control" placeholder="Nhập tên người nhận" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="receiver-phone" class="form-label">Số Điện Thoại Người Nhận</label>
+                    <input type="tel" id="receiver-phone" class="form-control" placeholder="Nhập số điện thoại" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="receiver-address" class="form-label">Địa Chỉ Người Nhận</label>
+                    <select id="receiver-address" class="form-select" required>
+                        <option value="" disabled selected>Chọn địa chỉ</option>
+                        <option value="home">Địa chỉ nhà: 123 Đường ABC, Quận 1, TP. HCM</option>
+                        <option value="work">Địa chỉ cơ quan: 456 Đường XYZ, Quận 3, TP. HCM</option>
+                    </select>
+                </div>
+
+                <!-- Phương thức thanh toán -->
+                <div class="mb-3">
+                    <label for="payment-method" class="form-label">Chọn Phương Thức Thanh Toán</label>
+                    <select id="payment-method" class="form-select" required>
+                        <option value="" disabled selected>Chọn phương thức</option>
+                        <option value="credit-card">Thanh Toán Bằng Thẻ Tín Dụng</option>
+                        <option value="e-wallet">Thanh Toán Bằng Ví Điện Tử</option>
+                        <option value="cod">Thanh Toán Khi Nhận Hàng (COD)</option>
+                    </select>
+                </div>
+
+                <!-- Nút hành động -->
+                <div class="d-flex justify-content-between">
+                    <a href="/page/homepage.html" class="btn btn-secondary">Quay Lại</a>
+                    <button type="submit" class="btn btn-primary">Xác Nhận Thanh Toán</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Footer Placeholder -->
+    <div id="footer"></div>
+</body>
+
+</html>

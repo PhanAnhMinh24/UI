@@ -2,16 +2,22 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f6f9;
 }
 
 main {
     flex: 1;
+    padding: 20px;
 }
 
 .header {
-    background-color: #3498db;
-    padding: 10px 0;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    padding: 15px 0;
     color: white;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
@@ -20,24 +26,38 @@ main {
 
 .nav-menu {
     background-color: #2980b9;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .nav-menu .nav-link {
     color: white;
     font-weight: bold;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-menu .nav-link:hover {
     background-color: #3498db;
+    color: #ffd700;
 }
 
 .sidebar {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .category-item {
-    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .category-item:hover {
@@ -47,33 +67,42 @@ main {
 .hot-label {
     background-color: #ff4757;
     color: white;
-    padding: 2px 6px;
-    border-radius: 3px;
+    padding: 4px 8px;
+    border-radius: 12px;
     font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .footer {
     background-color: #3498db;
     color: white;
     padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .footer h5 {
     color: #ffd700;
+    margin-bottom: 10px;
 }
 
 .product-card {
     transition: all 0.3s ease;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .user-actions {
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 .icon-container {
@@ -89,13 +118,15 @@ main {
     border-radius: 50%;
     padding: 2px 6px;
     font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px 20px;
 }
 
 .logo {
@@ -111,7 +142,13 @@ main {
     width: 100%;
     padding: 8px;
     border-radius: 4px;
-    border: none;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #3498db;
+    outline: none;
 }
 
 .contact-info {
@@ -127,12 +164,6 @@ main {
     font-weight: normal;
 }
 
-.user-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
 .user-actions a {
     color: white;
     text-decoration: none;
@@ -140,25 +171,21 @@ main {
     align-items: center;
     gap: 5px;
     position: relative;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .user-actions a:hover {
     color: #ffd700;
 }
 
-.notification-badge {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: #ff4757;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
-    font-weight: bold;
+.custom-dropdown-item {
+    color: black !important;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.icon-container {
-    position: relative;
-    display: inline-block;
+.custom-dropdown-item:hover {
+    background-color: #f1f1f1;
 }
