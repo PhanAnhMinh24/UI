@@ -43,6 +43,46 @@ function loadUserProfile(token) {
         });
 }
 
+function getAddressUserProfile() {
+    const token = localStorage.getItem('authToken');
+
+    if (!token) {
+        console.error('Token không tồn tại trong localStorage.');
+        return;
+    }
+
+    fetch(API_PROFILE, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Không thể tải thông tin người dùng.');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const userInfo = data.results;
+
+            const addressDropdown = document.getElementById('receiver-address');
+            addressDropdown.innerHTML = '<option value="" disabled selected>Chọn địa chỉ</option>';
+
+            userInfo.addressResponses.forEach(address => {
+                const option = document.createElement('option');
+                option.value = address.id;
+                option.textContent = address.address;
+                addressDropdown.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error('Lỗi khi tải thông tin người dùng:', error);
+            alert('Không thể tải thông tin người dùng. Vui lòng thử lại sau.');
+        });
+}
+
 /**
  * Hàm điền thông tin người dùng vào form
  */

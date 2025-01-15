@@ -22,4 +22,9 @@ const API_REVIEW_DETAIL = (productId) => `${HOST_PRODUCTS}/reviews/${productId}`
 
 // Carts
 const API_CART = (productId) => `${HOST_ORDERS}/cart/${productId}`;
+const API_DELETE_CART_ITEM = (cartItemId) => `${HOST_ORDERS}/cart/${cartItemId}`;
+const API_CART_DETAIL = HOST_ORDERS + '/cart';
 const API_TOTAL_ITEM_OF_CART = HOST_ORDERS + '/cart/total-item';
+
+// Purchase Order
+const API_PURCHASE_ORDER = HOST_ORDERS + '/purchase-order';

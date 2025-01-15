@@ -34,7 +34,7 @@
 
             // Load Footer
             fetch('../page/component/footer.html')
-            .then(response => response.text())
+                .then(response => response.text())
                 .then(data => {
                     document.getElementById('footer').innerHTML = data;
                 })
@@ -44,6 +44,7 @@
     <script src="/js/constants.js"></script>
     <script src="/js/categories.js"></script>
     <script src="/js/products.js"></script>
+    <script src="/js/cart.js"></script>
 
     <!-- Content -->
     <div id="content" class="container mt-4">

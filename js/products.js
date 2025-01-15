@@ -259,6 +259,7 @@ function addToCart(productId) {
         .then(response => response.json())
         .then(data => {
             alert('Sản phẩm đã được thêm vào giỏ hàng');
+            location.reload();
         })
         .catch(error => {
             console.error('Error adding to cart:', error);
